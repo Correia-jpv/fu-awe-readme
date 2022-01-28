@@ -1,7 +1,7 @@
-name: fetch-new-commit
+name: fetch-new-commit-frontend-dev-bookmarks
 on:
   schedule:
-    - cron:  '40 5 * * *'
+    - cron:  '50 5 * * *'
     
 #   workflow_run:
 #     workflows: ["trigger-new-commit"]
@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
 #     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     env:
-      SOURCE: 'sindresorhus'
-      REPO: 'awesome'
+      SOURCE: 'dypsilon'
+      REPO: 'frontend-dev-bookmarks'
     steps:
       - uses: actions/checkout@v2
       - name: Checkout origin repo
