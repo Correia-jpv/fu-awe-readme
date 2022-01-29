@@ -1,4 +1,4 @@
-name: fetch-new-commit
+name: fetch-awesome
 on:
   schedule:
     - cron:  '40 5 * * *'

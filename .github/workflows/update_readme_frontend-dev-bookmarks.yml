@@ -1,4 +1,4 @@
-name: fetch-new-commit-frontend-dev-bookmarks
+name: fetch-frontend-dev-bookmarks
 on:
   schedule:
     - cron:  '50 5 * * *'

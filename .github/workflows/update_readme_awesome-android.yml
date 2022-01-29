@@ -1,4 +1,4 @@
-name: fetch-new-commit-awesome-android
+name: fetch-awesome-android
 on:
   schedule:
     - cron:  '0 6 * * *'

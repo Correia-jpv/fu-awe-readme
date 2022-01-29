@@ -1,4 +1,4 @@
-name: fetch-new-commit
+name: fetch-awesome-nodejs
 on:
   schedule:
     - cron:  '30 5 * * *'

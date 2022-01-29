@@ -1,7 +1,7 @@
-name: fetch-new-commit-awesome-electron
+name: fetch-awesome-react-native
 on:
   schedule:
-    - cron:  '10 6 * * *'
+    - cron:  '20 6 * * *'
     
 #   workflow_run:
 #     workflows: ["trigger-new-commit"]
@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
 #     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     env:
-      SOURCE: 'sindresorhus'
-      REPO: 'awesome-electron'
+      SOURCE: 'jondot'
+      REPO: 'awesome-react-native'
     steps:
       - uses: actions/checkout@v2
       - name: Checkout origin repo

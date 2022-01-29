@@ -1,4 +1,4 @@
-name: fetch-new-commit-awesome-ios
+name: fetch-awesome-ios
 on:
   schedule:
     - cron:  '30 6 * * *'
@@ -52,6 +52,7 @@ jobs:
         with:
           source_file: 'results/readme.md'
           destination_repo: correia-jpv/fucking-${{ env.REPO }}
+          rename: 'README.md'
           user_email: 'correia-jpv@users.noreply.github.com'
           user_name: 'correia-jpv'
           commit_message: '⚡ Update README'
