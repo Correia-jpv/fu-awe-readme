@@ -16,11 +16,12 @@ HEADERS = {
 session = requests.session()
 session.mount("https://", HTTPAdapter())
 session.headers.update(HEADERS)
-md = session.get(ORIGIN_REPO).content.decode("utf-8")
-if md.headers['Content-Length'] <= 35:
+md = session.get(ORIGIN_REPO)
+if int(md.headers['Content-Length']) <= 35:
     ORIGIN_REPO = re.sub('readme', 'README', ORIGIN_REPO)
-    md = session.get(ORIGIN_REPO).content.decode("utf-8")
+    md = session.get(ORIGIN_REPO)
 
+md = md.content.decode("utf-8")
 
 
 externalLinks = "(?:[^\!]|^)\[([^\[\]]+)\]\((?!https://github.com/|#)([^()]+)\)"
