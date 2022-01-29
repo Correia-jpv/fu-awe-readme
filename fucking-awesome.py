@@ -17,6 +17,9 @@ session = requests.session()
 session.mount("https://", HTTPAdapter())
 session.headers.update(HEADERS)
 md = session.get(ORIGIN_REPO).content.decode("utf-8")
+if md.headers['Content-Length'] <= 35:
+    ORIGIN_REPO = re.sub('readme', 'README', ORIGIN_REPO)
+    md = session.get(ORIGIN_REPO).content.decode("utf-8")
 
 
 
