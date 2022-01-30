@@ -16,6 +16,10 @@ jobs:
     env:
       SOURCE: ''
       REPO: ''
+    strategy:
+      matrix:
+        SOURCE: ['sindresorhus', 'sindresorhus']
+        REPO: ['awesome', 'awesome-nodejs']
     steps:
       - uses: actions/checkout@v2
       - name: Checkout origin repo
@@ -23,9 +27,9 @@ jobs:
         env:
           SECRET_TOKEN: ${{ secrets.PAT }}
         with:
-          src_repo: ${{ env.SOURCE }}/${{ env.REPO }}
+          src_repo: ${{ matrix.SOURCE }}/${{ matrix.REPO }}
           src_branch: 'HEAD'
-          dest_repo: correia-jpv/fucking-${{ env.REPO }}
+          dest_repo: correia-jpv/fucking-${{ matrix.REPO }}
           dest_branch: 'main'
 
 
@@ -42,7 +46,7 @@ jobs:
           python fucking-awesome.py
         env:
           PAT: ${{ secrets.pat }}
-          ORIGIN_REPO: https://raw.githubusercontent.com/correia-jpv/fucking-${{ env.REPO }}/main/readme.md
+          ORIGIN_REPO: https://raw.githubusercontent.com/correia-jpv/fucking-${{ matrix.REPO }}/main/readme.md
 
 
       - name: Pushes README
@@ -51,7 +55,7 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.PAT }}
         with:
           source_file: 'results/readme.md'
-          destination_repo: correia-jpv/fucking-${{ env.REPO }}
+          destination_repo: correia-jpv/fucking-${{ matrix.REPO }}
           rename: 'README.md'
           user_email: 'correia-jpv@users.noreply.github.com'
           user_name: 'correia-jpv'
