@@ -11,20 +11,34 @@ jobs:
     strategy:
       matrix:
         REPOS: [
-          owner: 'sindresorhus',
-          repo: 'awesome',
+          {
+            owner: 'sindresorhus',
+            repo: 'awesome',
+          },
+          {
           owner: 'sindresorhus',
           repo: 'awesome-nodejs',
+          },
+          {
           owner: 'JStumpp',
           repo: 'awesome-android',
+          },
+          {
           owner: 'sindresorhus',
           repo: 'awesome-electron',
+          },
+          {
           owner: 'vsouza',
           repo: 'awesome-ios',
+          },
+          {
           owner: 'jondot',
           repo: 'awesome-react-native',
+          },
+          {
           owner: 'dypsilon',
           repo: 'frontend-dev-bookmarks',
+          },
           ]
     steps:
       - uses: actions/checkout@v2
