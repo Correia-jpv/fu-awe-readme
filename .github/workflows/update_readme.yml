@@ -11,19 +11,19 @@ jobs:
     strategy:
       matrix:
         REPOS: [
-          source: 'sindresorhus',
+          owner: 'sindresorhus',
           repo: 'awesome',
-          source: 'sindresorhus',
+          owner: 'sindresorhus',
           repo: 'awesome-nodejs',
-          source: 'JStumpp',
+          owner: 'JStumpp',
           repo: 'awesome-android',
-          source: 'sindresorhus',
+          owner: 'sindresorhus',
           repo: 'awesome-electron',
-          source: 'vsouza',
+          owner: 'vsouza',
           repo: 'awesome-ios',
-          source: 'jondot',
+          owner: 'jondot',
           repo: 'awesome-react-native',
-          source: 'dypsilon',
+          owner: 'dypsilon',
           repo: 'frontend-dev-bookmarks',
           ]
     steps:
@@ -33,7 +33,7 @@ jobs:
         env:
           SECRET_TOKEN: ${{ secrets.PAT }}
         with:
-          src_repo: ${{ matrix.REPOS.source }}/${{ matrix.REPOS.repo }}
+          src_repo: ${{ matrix.REPOS.owner }}/${{ matrix.REPOS.repo }}
           src_branch: 'HEAD'
           dest_repo: correia-jpv/fucking-${{ matrix.REPOS.repo }}
           dest_branch: 'main'
