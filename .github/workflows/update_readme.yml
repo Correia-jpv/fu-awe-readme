@@ -63,6 +63,30 @@ jobs:
           owner: 'Solido',
           repo: 'awesome-flutter',
           },
+          {
+          owner: 'sorrycc',
+          repo: 'awesome-javascript',
+          },
+          {
+          owner: 'wbinnssmith',
+          repo: 'awesome-promises',
+          },
+          {
+          owner: 'parro-it',
+          repo: 'awesome-micro-npm-packages',
+          },
+          {
+          owner: 'sindresorhus',
+          repo: 'awesome-npm',
+          },
+          {
+          owner: 'dustinspecker',
+          repo: 'awesome-eslint',
+          },
+          {
+          owner: 'stoeffel',
+          repo: 'awesome-fp-js',
+          },
           ]
     steps:
       - uses: actions/checkout@v2
