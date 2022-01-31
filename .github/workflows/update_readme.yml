@@ -39,6 +39,18 @@ jobs:
           owner: 'dypsilon',
           repo: 'frontend-dev-bookmarks',
           },
+          {
+          owner: 'jaywcjlove',
+          repo: 'awesome-mac',
+          },
+          {
+          owner: 'serhii-londar',
+          repo: 'open-source-mac-os-apps',
+          },
+          {
+          owner: 'donnemartin',
+          repo: 'awesome-aws',
+          },
           ]
     steps:
       - uses: actions/checkout@v2
