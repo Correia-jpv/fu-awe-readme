@@ -51,6 +51,18 @@ jobs:
           owner: 'donnemartin',
           repo: 'awesome-aws',
           },
+          {
+          owner: 'quozd',
+          repo: 'awesome-dotnet',
+          },
+          {
+          owner: 'thibmaek',
+          repo: 'awesome-raspberry-pi',
+          },
+          {
+          owner: 'Solido',
+          repo: 'awesome-flutter',
+          },
           ]
     steps:
       - uses: actions/checkout@v2
