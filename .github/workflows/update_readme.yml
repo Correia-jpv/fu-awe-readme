@@ -87,6 +87,62 @@ jobs:
           owner: 'stoeffel',
           repo: 'awesome-fp-js',
           },
+          {
+          owner: 'matteocrippa',
+          repo: 'awesome-swift',
+          },
+          {
+          owner: 'vinta',
+          repo: 'awesome-python',
+          },
+          {
+          owner: 'rust-unofficial',
+          repo: 'awesome-rust',
+          },
+          {
+          owner: 'avelino',
+          repo: 'awesome-go',
+          },
+          {
+          owner: 'markets',
+          repo: 'awesome-ruby',
+          },
+          {
+          owner: 'h4cc',
+          repo: 'awesome-elixir',
+          },
+          {
+          owner: 'fffaraz',
+          repo: 'awesome-cpp',
+          },
+          {
+          owner: 'akullpp',
+          repo: 'awesome-java',
+          },
+          {
+          owner: 'KotlinBy',
+          repo: 'awesome-kotlin',
+          },
+          {
+          owner: 'ziadoz',
+          repo: 'awesome-php',
+          },
+          {
+          owner: 'addyosmani',
+          repo: 'es6-tools',
+          },
+          {
+          owner: 'davidsonfellipe',
+          repo: 'awesome-wpo',
+          },
+          {
+          owner: 'awesome-css-group',
+          repo: 'awesome-css',
+          },
+          {
+          owner: 'enaqx',
+          repo: 'awesome-react',
+          },
           ]
     steps:
       - uses: actions/checkout@v2
