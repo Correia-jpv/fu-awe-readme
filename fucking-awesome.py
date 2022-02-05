@@ -1,5 +1,6 @@
 import os
 import re
+import time
 import requests
 from requests.adapters import HTTPAdapter
 from dotenv import load_dotenv
@@ -31,8 +32,14 @@ internalGithubRepos = "(?:[^\!]|^)\[([^\[\]]+)\]\((?=https://github.com/)([^()]+
 def grabStats(repo):
     head, sep, tail = repo.group(2).partition('/tree/')
     repoUrl = re.sub('https://github.com', 'https://api.github.com/repos', head)
-
+    
     r = session.get(repoUrl)
+    while (r.status_code == 403):
+        print('waiting')
+        for second in range(0, 600):
+            time.sleep(1)
+        r = session.get(repoUrl)
+
     data = r.json()
     repoStars = str(data['stargazers_count'] if 'stargazers_count' in data else '?')
     repoForks = str(data['forks'] if 'forks' in data else '?')
