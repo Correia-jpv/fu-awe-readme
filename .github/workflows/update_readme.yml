@@ -156,13 +156,7 @@ jobs:
           src_branch: 'HEAD'
           dest_repo: correia-jpv/fucking-${{ matrix.REPOS.repo }}
           dest_branch: 'main'
-
-      
-      - name: Remove origin actions
-        uses: JesseTG/rm@v1.0.2
-        with:
-          path: /.github/workflows/
-
+          ignore-folder: .github/workflows/
 
       - name: Setup python
         uses: actions/setup-python@v2
