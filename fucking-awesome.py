@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 PAT = os.getenv("PAT")
 ORIGIN_REPO = os.getenv("ORIGIN_REPO")
-
+originRepoURL = f'https://raw.githubusercontent.com/correia-jpv/fucking-{ORIGIN_REPO}/main/readme.md'
 # Session
 HEADERS = {
     "Authorization": 'token ' + PAT
@@ -16,13 +16,12 @@ HEADERS = {
 session = requests.session()
 session.mount("https://", HTTPAdapter())
 session.headers.update(HEADERS)
-md = session.get(ORIGIN_REPO)
+md = session.get(originRepoURL)
 if int(md.headers['Content-Length']) <= 35:
-    ORIGIN_REPO = re.sub('readme', 'README', ORIGIN_REPO)
-    md = session.get(ORIGIN_REPO)
+    originRepoURL = re.sub('readme', 'README', originRepoURL)
+    md = session.get(originRepoURL)
 
 md = md.content.decode("utf-8")
-
 
 externalLinks = "(?:[^\!]|^)\[([^\[\]]+)\]\((?!https://github.com/|#)([^()]+)\)"
 internalGithubRepos = "(?:[^\!]|^)\[([^\[\]]+)\]\((?=https://github.com/)([^()]+)\)"
@@ -56,7 +55,7 @@ md = re.sub(internalGithubRepos, grabStats, md)
 
 
 # Write users to be followed to file
-filename = './results/readme.md'
+filename = f'./results/readme-{ORIGIN_REPO}.md'
 os.makedirs(os.path.dirname(filename), exist_ok=True)
 with open(filename, "w+", encoding='utf-8') as f:
     f.write(md)

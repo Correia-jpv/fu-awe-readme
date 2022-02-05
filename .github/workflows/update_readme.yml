@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
+      max-parallel: 1
       matrix:
         REPOS: [
           {
@@ -174,12 +175,12 @@ jobs:
           ORIGIN_REPO: https://raw.githubusercontent.com/correia-jpv/fucking-${{ matrix.REPOS.repo }}/main/readme.md
 
 
-      - name: Pushes README
+      - name: Push README
         uses: dmnemec/copy_file_to_another_repo_action@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.PAT }}
         with:
-          source_file: 'results/readme.md'
+          source_file: 'results/readme-${{ matrix.REPOS.repo }}.md'
           destination_repo: correia-jpv/fucking-${{ matrix.REPOS.repo }}
           rename: 'README.md'
           user_email: 'correia-jpv@users.noreply.github.com'
