@@ -156,7 +156,7 @@ jobs:
           src_branch: 'HEAD'
           dest_repo: correia-jpv/fucking-${{ matrix.REPOS.repo }}
           dest_branch: 'main'
-          ignore_folder: '.github/workflows'
+          ignore_folder: '.github/workflows/'
 
       - name: Setup python
         uses: actions/setup-python@v2
