@@ -186,5 +186,16 @@ jobs:
           user_email: 'correia-jpv@users.noreply.github.com'
           user_name: 'correia-jpv'
           commit_message: '⚡ Update README'
-        
+          
+      - name: Push funding
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.PAT }}
+        with:
+          source_file: '.github/funding.yml'
+          destination_repo: correia-jpv/fucking-${{ matrix.REPOS.repo }}
+          destination_folder: '.github'
+          user_email: 'correia-jpv@users.noreply.github.com'
+          user_name: 'correia-jpv'
+          commit_message: '💗 Funding'
         
