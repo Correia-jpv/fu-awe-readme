@@ -172,7 +172,7 @@ jobs:
           python fucking-awesome.py
         env:
           PAT: ${{ secrets.pat }}
-          ORIGIN_REPO: https://raw.githubusercontent.com/correia-jpv/fucking-${{ matrix.REPOS.repo }}/main/readme.md
+          ORIGIN_REPO: ${{ matrix.REPOS.repo }}
 
 
       - name: Push README
@@ -186,7 +186,8 @@ jobs:
           user_email: 'correia-jpv@users.noreply.github.com'
           user_name: 'correia-jpv'
           commit_message: '⚡ Update README'
-          
+
+
       - name: Push funding
         uses: dmnemec/copy_file_to_another_repo_action@main
         env:
