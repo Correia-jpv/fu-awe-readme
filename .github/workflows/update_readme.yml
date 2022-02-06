@@ -194,6 +194,7 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.PAT }}
         with:
           source_file: '.github/funding.yml'
+          rename: 'FUNDING.yml'
           destination_repo: correia-jpv/fucking-${{ matrix.REPOS.repo }}
           destination_folder: '.github'
           user_email: 'correia-jpv@users.noreply.github.com'
