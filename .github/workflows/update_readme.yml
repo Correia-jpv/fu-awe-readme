@@ -145,6 +145,106 @@ jobs:
           owner: 'enaqx',
           repo: 'awesome-react',
           },
+          {
+          owner: 'PatrickJS',
+          repo: 'awesome-angular',
+          },
+          {
+          owner: 'wasabeef',
+          repo: 'awesome-android-ui',
+          },
+          {
+          owner: 'cjwirth',
+          repo: 'awesome-ios-ui',
+          },
+          {
+          owner: 'vuejs',
+          repo: 'awesome-vue',
+          },
+          {
+          owner: 'ChromeDevTools',
+          repo: 'awesome-chrome-devtools',
+          },
+          {
+          owner: 'unicodeveloper',
+          repo: 'awesome-nextjs',
+          },
+          {
+          owner: 'Famolus',
+          repo: 'awesome-sass',
+          },
+          {
+          owner: 'aniftyco',
+          repo: 'awesome-tailwindcss',
+          },
+          {
+          owner: 'veggiemonk',
+          repo: 'awesome-docker',
+          },
+          {
+          owner: 'chiraggude',
+          repo: 'awesome-laravel',
+          },
+          {
+          owner: 'academic',
+          repo: 'awesome-datascience',
+          },
+          {
+          owner: 'josephmisiti',
+          repo: 'awesome-machine-learning',
+          },
+          {
+          owner: 'ujjwalkarn',
+          repo: 'Machine-Learning-Tutorials',
+          },
+          {
+          owner: 'jtoy',
+          repo: 'awesome-tensorflow',
+          },
+          {
+          owner: 'ChristosChristofidis',
+          repo: 'awesome-deep-learning',
+          },
+          {
+          owner: 'analysis-tools-dev',
+          repo: 'static-analysis',
+          },
+          {
+          owner: '0xnr',
+          repo: 'awesome-bigdata',
+          },
+          {
+          owner: 'ellisonleao',
+          repo: 'magictools',
+          },
+          {
+          owner: 'leereilly',
+          repo: 'games',
+          },
+          {
+          owner: 'RyanNielson',
+          repo: 'awesome-unity',
+          },
+          {
+          owner: 'sindresorhus',
+          repo: 'quick-look-plugins',
+          },
+          {
+          owner: 'alebcay',
+          repo: 'awesome-shell',
+          },
+          {
+          owner: 'unixorn',
+          repo: 'awesome-zsh-plugins',
+          },
+          {
+          owner: 'k4m4',
+          repo: 'terminals-are-sexy',
+          },
+          {
+          owner: 'sdras',
+          repo: 'awesome-actions',
+          },
           ]
     steps:
       - uses: actions/checkout@v2
