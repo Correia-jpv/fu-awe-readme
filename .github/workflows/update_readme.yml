@@ -1,7 +1,7 @@
 name: fetch-repos
 on:
   schedule:
-    - cron:  '30 5 * * *'
+    - cron:  '50 23 */2 * *'
 
   workflow_dispatch:
 
