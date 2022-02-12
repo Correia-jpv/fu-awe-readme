@@ -245,6 +245,10 @@ jobs:
           owner: 'sdras',
           repo: 'awesome-actions',
           },
+          {
+          owner: 'lindelof',
+          repo: 'awesome-web-effect',
+          },
           ]
     steps:
       - uses: actions/checkout@v2
