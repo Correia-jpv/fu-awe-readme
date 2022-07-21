@@ -249,6 +249,54 @@ jobs:
           owner: 'lindelof',
           repo: 'awesome-web-effect',
           },
+          {
+          owner: 'matiassingers',
+          repo: 'awesome-web-effect',
+          },
+          {
+          owner: 'abhisheknaiidu',
+          repo: 'awesome-github-profile-readme',
+          },
+          {
+          owner: 'luong-komorebi',
+          repo: 'Awesome-Linux-Software',
+          },
+          {
+          owner: 'brillout',
+          repo: 'awesome-react-components',
+          },
+          {
+          owner: 'MunGell',
+          repo: 'awesome-for-beginners',
+          },
+          {
+          owner: 'awesome-selfhosted',
+          repo: 'awesome-selfhosted',
+          },
+          {
+          owner: 'trimstray',
+          repo: 'the-book-of-secret-knowledge',
+          },
+          {
+          owner: 'chentsulin',
+          repo: 'awesome-graphql',
+          },
+          {
+          owner: 'mfornos',
+          repo: 'awesome-microservices',
+          },
+          {
+          owner: 'terkelg',
+          repo: 'awesome-creative-coding',
+          },
+          {
+          owner: 'aviaryan',
+          repo: 'awesome-no-login-web-apps',
+          },
+          {
+          owner: 'Hack-with-Github',
+          repo: 'Awesome-Hacking',
+          },
           ]
     steps:
       - uses: actions/checkout@v2
