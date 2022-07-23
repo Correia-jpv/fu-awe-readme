@@ -24,15 +24,39 @@ if int(md.headers['Content-Length']) <= 35:
 
 md = md.content.decode("utf-8")
 
-externalLinks = "(?:[^\!]|^)\[([^\[\]]+)\]\((?!https://github.com/|#)([^()]+)\)"
-internalGithubRepos = "(?:[^\!]|^)\[([^\[\]]+)\]\((?=https://github.com/)([^()]+)\)"
+
+# Match original repo links
+originalRepoLinks = f'(https:\/\/github\.com\/)([^\/]*)\/({ORIGIN_REPO}[\/\)\&])'
+
+md = re.sub(originalRepoLinks, r"""\1correia-jpv/fucking-\3""", md)
 
 
+# Match all markdown links that are not from github
+externalLinks = "([^!])\[([^\[\]]+)\]\(https:\/\/(?!github\.com\/|#)([^()]+)\)"
+
+md = re.sub(externalLinks, r""" 🌎 [\2](\3)""", md)
+
+
+# Match all anchor links that are not from github
+externalLinksAnchors = '<a.+?\s*href\s*=\s*["\']?((?:(?!https:\/\/github\.com\/))https:\/\/[^"\'\s>]+)["\']?>((?:(?!<img).)*)(?=<\/a>)'
+
+md = re.sub(externalLinksAnchors, r"""<a href="\1">🌎 \2""", md)
+
+
+
+# Match all markdown GitHub links not to own repository
+internalGithubRepos = f"([^!])\[([^\[\]]+)\]\((?:(?!https:\/\/github\.com\/correia-jpv\/fucking-{ORIGIN_REPO}))(?=https:\/\/github.com\/)([^()]+)\)"
 
 def grabStats(repo):
-    head, sep, tail = repo.group(2).partition('/tree/')
-    repoUrl = re.sub('https://github.com', 'https://api.github.com/repos', head)
-    
+    repoUrl = repo.group(3)
+    head, sep, tail = repoUrl.partition('/tree/')
+    repoUrl = head
+    head, sep, tail = repoUrl.partition('/labels/')
+    repoUrl = head
+    head, sep, tail = repoUrl.partition('/blob/')
+    repoUrl = head
+    repoUrl = re.sub('https://github.com', 'https://api.github.com/repos', repoUrl)
+
     r = session.get(repoUrl)
     while (r.status_code == 403):
         print('waiting')
@@ -53,15 +77,49 @@ def grabStats(repo):
     repoStars = '<b><code>' + repoStars + '⭐</code></b>'
     repoForks = '<b><code>' + repoForks + '🍴</code></b>'
 
-    return f' {repoStars} {repoForks} [' + repo.group(1) + '](' + repo.group(2) + ')'
+    return f'{repo.group(1)} {repoStars} {repoForks} [' + repo.group(2) + '](' + repo.group(3) + ')'
 
-
-# curl requests with github matches
-md = re.sub(externalLinks, r""" 🌎 [\1](\2)""", md)
 md = re.sub(internalGithubRepos, grabStats, md)
 
 
-# Write users to be followed to file
+# Match all anchor GitHub links not to own repository or with images
+internalGithubReposAnchors = f'<a.+?\s*href\s*=\s*["\']?((?:(?!https:\/\/github\.com\/correia-jpv\/fucking-{ORIGIN_REPO}))https:\/\/github.com\/[^"\'\s>]+)["\']?>((?:(?!<img).)*)(?=<\/a>)'
+
+def grabStatsAnchors(repo):
+    repoUrl = repo.group(1)
+    head, sep, tail = repoUrl.partition('/tree/')
+    repoUrl = head
+    head, sep, tail = repoUrl.partition('/labels/')
+    repoUrl = head
+    head, sep, tail = repoUrl.partition('/blob/')
+    repoUrl = head
+    repoUrl = re.sub('https://github.com', 'https://api.github.com/repos', repoUrl)
+
+    r = session.get(repoUrl)
+    while (r.status_code == 403):
+        print('waiting')
+        for second in range(0, 600):
+            time.sleep(1)
+        r = session.get(repoUrl)
+
+    data = r.json()
+    repoStars = str(data['stargazers_count'] if 'stargazers_count' in data else '?')
+    repoForks = str(data['forks'] if 'forks' in data else '?')
+    
+    for n in range(6-len(repoStars)):
+        repoStars = '&nbsp;' + repoStars
+
+    for n in range(6-len(repoForks)):
+        repoForks = '&nbsp;' + repoForks
+        
+    repoStars = '<b><code>' + repoStars + '⭐</code></b>'
+    repoForks = '<b><code>' + repoForks + '🍴</code></b>'
+
+    return f' {repoStars} {repoForks} <a href="{repo.group(1)}">{repo.group(2)}</a>'
+
+md = re.sub(internalGithubReposAnchors, grabStatsAnchors, md)
+
+
 filename = f'./results/readme-{ORIGIN_REPO}.md'
 os.makedirs(os.path.dirname(filename), exist_ok=True)
 with open(filename, "w+", encoding='utf-8') as f:
