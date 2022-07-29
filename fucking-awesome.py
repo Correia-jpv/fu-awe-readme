@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 PAT = os.getenv("PAT")
+ORIGIN_OWNER = os.getenv("ORIGIN_OWNER")
 ORIGIN_REPO = os.getenv("ORIGIN_REPO")
 originRepoURL = f'https://raw.githubusercontent.com/correia-jpv/fucking-{ORIGIN_REPO}/main/readme.md'
 # Session
@@ -30,6 +31,8 @@ originalRepoLinks = f'(https:\/\/github\.com\/)([^\/]*)\/({ORIGIN_REPO}[\/\)\&])
 
 md = re.sub(originalRepoLinks, r"""\1correia-jpv/fucking-\3""", md)
 
+
+md += f'\r\n## Source\r\n[{ORIGIN_OWNER}/{ORIGIN_REPO}](https://github.com/{ORIGIN_OWNER}/{ORIGIN_REPO})'
 
 # Match all markdown links that are not from github
 externalLinks = "([^!])\[([^\[\]]+)\]\(https:\/\/(?!github\.com\/|#)([^()]+)\)"
