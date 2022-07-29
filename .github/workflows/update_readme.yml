@@ -38,10 +38,6 @@ jobs:
           repo: 'awesome-react-native',
           },
           {
-          owner: 'dypsilon',
-          repo: 'frontend-dev-bookmarks',
-          },
-          {
           owner: 'jaywcjlove',
           repo: 'awesome-mac',
           },
@@ -296,6 +292,26 @@ jobs:
           {
           owner: 'Hack-with-Github',
           repo: 'Awesome-Hacking',
+          },
+          {
+          owner: 'dkhamsing',
+          repo: 'open-source-ios-apps',
+          },
+          {
+          owner: 'thangchung',
+          repo: 'awesome-dotnet-core',
+          },
+          {
+          owner: 'awesome-foss',
+          repo: 'awesome-sysadmin',
+          },
+          {
+          owner: 'iCHAIT',
+          repo: 'awesome-macOS',
+          },
+          {
+          owner: 'agarrharr',
+          repo: 'awesome-cli-apps',
           },
           ]
     steps:
