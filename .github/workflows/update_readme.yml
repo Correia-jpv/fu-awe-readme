@@ -324,6 +324,7 @@ jobs:
           python fucking-awesome.py
         env:
           PAT: ${{ secrets.pat }}
+          ORIGIN_OWNER: ${{ matrix.REPOS.owner }}
           ORIGIN_REPO: ${{ matrix.REPOS.repo }}
 
 
