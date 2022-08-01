@@ -80,7 +80,7 @@ def grabStats(repo):
     repoStars = '<b><code>' + repoStars + '⭐</code></b>'
     repoForks = '<b><code>' + repoForks + '🍴</code></b>'
 
-    return f'{repo.group(1)} {repoStars} {repoForks} [' + repo.group(2) + '](' + repo.group(3) + ')'
+    return f'{repo.group(1)}{repoStars} {repoForks} [' + repo.group(2) + '](' + repo.group(3) + ')'
 
 md = re.sub(internalGithubRepos, grabStats, md)
 
