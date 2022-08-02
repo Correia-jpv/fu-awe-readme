@@ -48,7 +48,7 @@ md = re.sub(externalLinksAnchors, r"""<a href="\1">🌎 \2""", md)
 
 
 # Match all markdown GitHub links not to own repository
-internalGithubRepos = f"([^!])\[([^\[\]]+)\]\((?:(?!https:\/\/github\.com\/correia-jpv\/fucking-{ORIGIN_REPO}))(?=https:\/\/github.com\/)([^()]+)\)"
+internalGithubRepos = f"([^!])\[([^\[\]]+)\]\((?:(?!https:\/\/github\.com\/correia-jpv\/fucking-{ORIGIN_REPO}))(?=https:\/\/github.com\/[^()]+\/)([^()]+)"
 
 def grabStats(repo):
     repoUrl = repo.group(3)
@@ -86,7 +86,7 @@ md = re.sub(internalGithubRepos, grabStats, md)
 
 
 # Match all anchor GitHub links not to own repository or with images
-internalGithubReposAnchors = f'<a.+?\s*href\s*=\s*["\']?((?:(?!https:\/\/github\.com\/correia-jpv\/fucking-{ORIGIN_REPO}))https:\/\/github.com\/[^"\'\s>]+)["\']?>((?:(?!<img).)*)(?=<\/a>)'
+internalGithubReposAnchors = f'<a.+?\s*href\s*=\s*["\']?((?:(?!https:\/\/github\.com\/correia-jpv\/fucking-{ORIGIN_REPO}))https:\/\/github.com\/[^"\'\s>]+\/[^"\'\s>]+)["\']?>((?:(?!<img).)*)(?=<\/a>)'
 
 def grabStatsAnchors(repo):
     repoUrl = repo.group(1)
