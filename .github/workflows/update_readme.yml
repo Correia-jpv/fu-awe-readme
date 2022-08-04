@@ -313,6 +313,54 @@ jobs:
           owner: 'agarrharr',
           repo: 'awesome-cli-apps',
           },
+          {
+          owner: 'neutraltone',
+          repo: 'awesome-stock-resources',
+          },
+          {
+          owner: 'rshipp',
+          repo: 'awesome-malware-analysis',
+          },
+          {
+          owner: 'matheusfelipeog',
+          repo: 'beautiful-docs',
+          },
+          {
+          owner: 'qazbnm456',
+          repo: 'awesome-web-security',
+          },
+          {
+          owner: 'pluja',
+          repo: 'awesome-privacy',
+          },
+          {
+          owner: 'Juanpe',
+          repo: 'About-SwiftUI',
+          },
+          {
+          owner: 'paralax',
+          repo: 'awesome-honeypots',
+          },
+          {
+          owner: 'ashishb',
+          repo: 'android-security-awesome',
+          },
+          {
+          owner: 'meirwah',
+          repo: 'awesome-incident-response',
+          },
+          {
+          owner: 'troxler',
+          repo: 'awesome-css-frameworks',
+          },
+          {
+          owner: 'qinwf',
+          repo: 'awesome-R',
+          },
+          {
+          owner: 'sobolevn',
+          repo: 'awesome-cryptography',
+          }
           ]
     steps:
       - uses: actions/checkout@v2
