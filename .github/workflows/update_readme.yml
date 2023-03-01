@@ -360,6 +360,58 @@ jobs:
           {
           owner: 'sobolevn',
           repo: 'awesome-cryptography',
+          },
+          {
+          owner: 'humanloop',
+          repo: 'awesome-chatgpt',
+          },
+          {
+          owner: 'public-apis',
+          repo: 'public-apis',
+          },
+          {
+          owner: 'goabstract',
+          repo: 'Awesome-Design-Tools',
+          },
+          {
+          owner: 'enaqx',
+          repo: 'awesome-pentest',
+          },
+          {
+          owner: 'alexpate',
+          repo: 'awesome-design-systems',
+          },
+          {
+          owner: 'xgrommx',
+          repo: 'awesome-redux',
+          },
+          {
+          owner: 'hackstoic',
+          repo: 'golang-open-source-projects',
+          },
+          {
+          owner: 'vitejs',
+          repo: 'awesome-vite',
+          },
+          {
+          owner: 'rehooks',
+          repo: 'awesome-react-hooks',
+          },
+          {
+          owner: 'jnv',
+          repo: 'lists',
+          },
+          {
+          owner: 'lauris',
+          repo: 'awesome-scala',
+          },
+          {
+          owner: 'Kristories',
+          repo: 'awesome-guidelines',
+          },
+          {
+          owner: 'djsime1',
+          repo: 'awesome-flipperzero',
           }
           ]
     steps:
