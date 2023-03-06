@@ -412,6 +412,30 @@ jobs:
           {
           owner: 'djsime1',
           repo: 'awesome-flipperzero',
+          },
+          {
+          owner: 'codecrafters-io',
+          repo: 'build-your-own-x',
+          },
+          {
+          owner: 'sdmg15',
+          repo: 'Best-websites-a-programmer-should-visit',
+          },
+          {
+          owner: 'bradtraversy',
+          repo: 'design-resources-for-developers',
+          },
+          {
+          owner: 'bayandin',
+          repo: 'awesome-awesomeness',
+          },
+          {
+          owner: 'Trinea',
+          repo: 'android-open-project',
+          },
+          {
+          owner: 'jobbole',
+          repo: 'awesome-python-cn',
           }
           ]
     steps:
