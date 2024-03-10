@@ -495,6 +495,6 @@ jobs:
           commit_message: '💗 Funding'
           
       - name: Keep workflow alive
-        uses: gautamkrishnar/keepalive-workflow@v1 
+        uses: gautamkrishnar/keepalive-workflow@v2 
 
         
