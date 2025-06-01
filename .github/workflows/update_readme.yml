@@ -436,6 +436,14 @@ jobs:
           {
           owner: 'jobbole',
           repo: 'awesome-python-cn',
+          },
+          {
+          owner: 'billmei',
+          repo: 'every-chatgpt-gui',
+          },
+          {
+          owner: 'mahseema',
+          repo: 'awesome-ai-tools',
           }
           ]
     steps:
